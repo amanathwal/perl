@@ -1,0 +1,31 @@
+doctype html
+head
+  title Notice
+  style
+    include style.css
+
+body
+  div#wrapper
+    h1 &#63743; SCS Signoff Overdue
+
+    div#message
+      p
+        | Dear #{dear_person_name},<p>
+        |
+
+      ul#specsList
+         each spec in specs_overdue
+           li
+              | #{spec.specname_clean} - expected to sign-off on #{spec.date} - <a href="#{spec.url}">SCS Link</a>. span=(Reminder Sent: #{spec.reminder_count + 1})
+
+      h3 Action Needed:
+      p
+        | <ol>
+        | <li>Please go to SCS Server and sign-off the spec by clicking the sign-off icon.
+        | <li>You can also delegate the sign-off to another team member by clicking the delegate i
+        | <li>If you find an issue with the spec, click on the RADAR icon in the "Reviewer Action" column. Use one of these 'Keywords' as needed:
+        | <ul>
+        | <li> &lt;Program&gt; Spec Blocker: A blocker is an issue so large and/or pervasive that we can NOT proceed forward into the next phase of the project without resolving it.
+        | <li> &lt;Program&gt; Spec Exception: During the spec review phase, cross-functional teams identify a several non-blocking type feedback items
+        | </ul>
+        | </ol>

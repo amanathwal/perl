@@ -1,0 +1,28 @@
+doctype html
+head
+  title Notice
+  style
+    include style.css
+
+body
+  div#wrapper
+    h1 &#63743; SCS Signoff Overdue
+
+    div#message
+      p
+        | Dear #{dear_person_name},<p>
+        |
+        | For the functional team #{function_clean} you were expected to sign-off the spec '#{specname}' by #{date}.<p>
+        |
+
+      h2 Action Needed:
+      p
+        | <ol>
+        | <li>Please go to <a href="#{url}">#{url_words}</a> and sign-off the spec by clicking the sign-off icon.
+        | <li>You can also delegate the sign-off to another team member by clicking the delegate icon.
+        | <li>If you find an issue with the spec, click on the RADAR icon in the "Reviewer Action" column. Use one of these 'Keywords' as needed:
+        | <ul>
+        | <li> &lt;Program&gt; Spec Blocker: A blocker is an issue so large and/or pervasive that we can NOT proceed forward into the next phase of the project without resolving it.
+        | <li> &lt;Program&gt; Spec Exception: During the spec review phase, cross-functional teams identify a several non-blocking type feedback items
+        | </ul>
+        | </ol>
